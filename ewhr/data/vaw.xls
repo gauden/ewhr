@@ -1,0 +1,262 @@
+"CountryCode"	"question_code"	"subset"	"answer"	"percentage"
+"AT"	"DVS_B02"	"01. All"	"01. Depression"	21
+"AT"	"DVS_B02"	"01. All"	"02. Anxiety"	46
+"AT"	"DVS_B02"	"01. All"	"03. Panic attacks"	19
+"AT"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	37
+"AT"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	39
+"AT"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	38
+"AT"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	20
+"AT"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	32
+"AT"	"DVS_B02"	"01. All"	"09. Other"	5
+"BE"	"DVS_B02"	"01. All"	"01. Depression"	20
+"BE"	"DVS_B02"	"01. All"	"02. Anxiety"	29
+"BE"	"DVS_B02"	"01. All"	"03. Panic attacks"	15
+"BE"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	36
+"BE"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	31
+"BE"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	32
+"BE"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	15
+"BE"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	36
+"BE"	"DVS_B02"	"01. All"	"09. Other"	4
+"BG"	"DVS_B02"	"01. All"	"01. Depression"	28
+"BG"	"DVS_B02"	"01. All"	"02. Anxiety"	43
+"BG"	"DVS_B02"	"01. All"	"03. Panic attacks"	24
+"BG"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	36
+"BG"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	30
+"BG"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	21
+"BG"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	11
+"BG"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	24
+"BG"	"DVS_B02"	"01. All"	"09. Other"	2
+"CY"	"DVS_B02"	"01. All"	"01. Depression"	24
+"CY"	"DVS_B02"	"01. All"	"02. Anxiety"	48
+"CY"	"DVS_B02"	"01. All"	"03. Panic attacks"	24
+"CY"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	24
+"CY"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	27
+"CY"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	26
+"CY"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	21
+"CY"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	23
+"CY"	"DVS_B02"	"01. All"	"09. Other"	1
+"CZ"	"DVS_B02"	"01. All"	"01. Depression"	17
+"CZ"	"DVS_B02"	"01. All"	"02. Anxiety"	35
+"CZ"	"DVS_B02"	"01. All"	"03. Panic attacks"	10
+"CZ"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	22
+"CZ"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	33
+"CZ"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	19
+"CZ"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	7
+"CZ"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	17
+"CZ"	"DVS_B02"	"01. All"	"09. Other"	7
+"DE"	"DVS_B02"	"01. All"	"01. Depression"	20
+"DE"	"DVS_B02"	"01. All"	"02. Anxiety"	36
+"DE"	"DVS_B02"	"01. All"	"03. Panic attacks"	13
+"DE"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	33
+"DE"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	43
+"DE"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	28
+"DE"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	13
+"DE"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	45
+"DE"	"DVS_B02"	"01. All"	"09. Other"	7
+"DK"	"DVS_B02"	"01. All"	"01. Depression"	13
+"DK"	"DVS_B02"	"01. All"	"02. Anxiety"	23
+"DK"	"DVS_B02"	"01. All"	"03. Panic attacks"	8
+"DK"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	37
+"DK"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	46
+"DK"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	21
+"DK"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	16
+"DK"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	38
+"DK"	"DVS_B02"	"01. All"	"09. Other"	3
+"EE"	"DVS_B02"	"01. All"	"01. Depression"	35
+"EE"	"DVS_B02"	"01. All"	"02. Anxiety"	32
+"EE"	"DVS_B02"	"01. All"	"03. Panic attacks"	17
+"EE"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	34
+"EE"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	30
+"EE"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	28
+"EE"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	10
+"EE"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	42
+"EE"	"DVS_B02"	"01. All"	"09. Other"	1
+"EL"	"DVS_B02"	"01. All"	"01. Depression"	28
+"EL"	"DVS_B02"	"01. All"	"02. Anxiety"	42
+"EL"	"DVS_B02"	"01. All"	"03. Panic attacks"	21
+"EL"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	39
+"EL"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	18
+"EL"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	25
+"EL"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	16
+"EL"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	20
+"EL"	"DVS_B02"	"01. All"	"09. Other"	1
+"ES"	"DVS_B02"	"01. All"	"01. Depression"	30
+"ES"	"DVS_B02"	"01. All"	"02. Anxiety"	39
+"ES"	"DVS_B02"	"01. All"	"03. Panic attacks"	14
+"ES"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	35
+"ES"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	26
+"ES"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	28
+"ES"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	18
+"ES"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	26
+"ES"	"DVS_B02"	"01. All"	"09. Other"	3
+"FI"	"DVS_B02"	"01. All"	"01. Depression"	23
+"FI"	"DVS_B02"	"01. All"	"02. Anxiety"	34
+"FI"	"DVS_B02"	"01. All"	"03. Panic attacks"	7
+"FI"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	34
+"FI"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	34
+"FI"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	22
+"FI"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	12
+"FI"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	29
+"FI"	"DVS_B02"	"01. All"	"09. Other"	3
+"FR"	"DVS_B02"	"01. All"	"01. Depression"	22
+"FR"	"DVS_B02"	"01. All"	"02. Anxiety"	30
+"FR"	"DVS_B02"	"01. All"	"03. Panic attacks"	15
+"FR"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	34
+"FR"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	28
+"FR"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	32
+"FR"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	13
+"FR"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	28
+"FR"	"DVS_B02"	"01. All"	"09. Other"	3
+"HR"	"DVS_B02"	"01. All"	"01. Depression"	30
+"HR"	"DVS_B02"	"01. All"	"02. Anxiety"	40
+"HR"	"DVS_B02"	"01. All"	"03. Panic attacks"	20
+"HR"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	32
+"HR"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	49
+"HR"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	31
+"HR"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	23
+"HR"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	18
+"HR"	"DVS_B02"	"01. All"	"09. Other"	3
+"HU"	"DVS_B02"	"01. All"	"01. Depression"	19
+"HU"	"DVS_B02"	"01. All"	"02. Anxiety"	43
+"HU"	"DVS_B02"	"01. All"	"03. Panic attacks"	10
+"HU"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	31
+"HU"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	40
+"HU"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	23
+"HU"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	13
+"HU"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	23
+"HU"	"DVS_B02"	"01. All"	"09. Other"	6
+"IE"	"DVS_B02"	"01. All"	"01. Depression"	33
+"IE"	"DVS_B02"	"01. All"	"02. Anxiety"	35
+"IE"	"DVS_B02"	"01. All"	"03. Panic attacks"	18
+"IE"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	55
+"IE"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	49
+"IE"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	36
+"IE"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	18
+"IE"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	31
+"IE"	"DVS_B02"	"01. All"	"09. Other"	1
+"IT"	"DVS_B02"	"01. All"	"01. Depression"	15
+"IT"	"DVS_B02"	"01. All"	"02. Anxiety"	38
+"IT"	"DVS_B02"	"01. All"	"03. Panic attacks"	11
+"IT"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	19
+"IT"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	22
+"IT"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	18
+"IT"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	8
+"IT"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	8
+"IT"	"DVS_B02"	"01. All"	"09. Other"	0
+"LT"	"DVS_B02"	"01. All"	"01. Depression"	22
+"LT"	"DVS_B02"	"01. All"	"02. Anxiety"	38
+"LT"	"DVS_B02"	"01. All"	"03. Panic attacks"	22
+"LT"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	32
+"LT"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	28
+"LT"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	26
+"LT"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	14
+"LT"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	14
+"LT"	"DVS_B02"	"01. All"	"09. Other"	0
+"LU"	"DVS_B02"	"01. All"	"01. Depression"	35
+"LU"	"DVS_B02"	"01. All"	"02. Anxiety"	36
+"LU"	"DVS_B02"	"01. All"	"03. Panic attacks"	28
+"LU"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	51
+"LU"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	39
+"LU"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	45
+"LU"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	28
+"LU"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	31
+"LU"	"DVS_B02"	"01. All"	"09. Other"	5
+"LV"	"DVS_B02"	"01. All"	"01. Depression"	17
+"LV"	"DVS_B02"	"01. All"	"02. Anxiety"	48
+"LV"	"DVS_B02"	"01. All"	"03. Panic attacks"	16
+"LV"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	16
+"LV"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	16
+"LV"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	15
+"LV"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	8
+"LV"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	30
+"LV"	"DVS_B02"	"01. All"	"09. Other"	2
+"MT"	"DVS_B02"	"01. All"	"01. Depression"	23
+"MT"	"DVS_B02"	"01. All"	"02. Anxiety"	28
+"MT"	"DVS_B02"	"01. All"	"03. Panic attacks"	17
+"MT"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	35
+"MT"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	36
+"MT"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	27
+"MT"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	17
+"MT"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	37
+"MT"	"DVS_B02"	"01. All"	"09. Other"	1
+"NL"	"DVS_B02"	"01. All"	"01. Depression"	21
+"NL"	"DVS_B02"	"01. All"	"02. Anxiety"	28
+"NL"	"DVS_B02"	"01. All"	"03. Panic attacks"	11
+"NL"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	37
+"NL"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	42
+"NL"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	23
+"NL"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	15
+"NL"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	39
+"NL"	"DVS_B02"	"01. All"	"09. Other"	8
+"PL"	"DVS_B02"	"01. All"	"01. Depression"	34
+"PL"	"DVS_B02"	"01. All"	"02. Anxiety"	52
+"PL"	"DVS_B02"	"01. All"	"03. Panic attacks"	26
+"PL"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	47
+"PL"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	44
+"PL"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	37
+"PL"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	27
+"PL"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	20
+"PL"	"DVS_B02"	"01. All"	"09. Other"	2
+"PT"	"DVS_B02"	"01. All"	"01. Depression"	34
+"PT"	"DVS_B02"	"01. All"	"02. Anxiety"	33
+"PT"	"DVS_B02"	"01. All"	"03. Panic attacks"	17
+"PT"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	23
+"PT"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	28
+"PT"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	32
+"PT"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	10
+"PT"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	13
+"PT"	"DVS_B02"	"01. All"	"09. Other"	5
+"RO"	"DVS_B02"	"01. All"	"01. Depression"	24
+"RO"	"DVS_B02"	"01. All"	"02. Anxiety"	44
+"RO"	"DVS_B02"	"01. All"	"03. Panic attacks"	22
+"RO"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	36
+"RO"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	27
+"RO"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	33
+"RO"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	22
+"RO"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	24
+"RO"	"DVS_B02"	"01. All"	"09. Other"	3
+"SE"	"DVS_B02"	"01. All"	"01. Depression"	15
+"SE"	"DVS_B02"	"01. All"	"02. Anxiety"	19
+"SE"	"DVS_B02"	"01. All"	"03. Panic attacks"	10
+"SE"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	18
+"SE"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	31
+"SE"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	19
+"SE"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	9
+"SE"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	33
+"SE"	"DVS_B02"	"01. All"	"09. Other"	4
+"SI"	"DVS_B02"	"01. All"	"01. Depression"	28
+"SI"	"DVS_B02"	"01. All"	"02. Anxiety"	34
+"SI"	"DVS_B02"	"01. All"	"03. Panic attacks"	15
+"SI"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	30
+"SI"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	47
+"SI"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	34
+"SI"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	12
+"SI"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	32
+"SI"	"DVS_B02"	"01. All"	"09. Other"	6
+"SK"	"DVS_B02"	"01. All"	"01. Depression"	24
+"SK"	"DVS_B02"	"01. All"	"02. Anxiety"	41
+"SK"	"DVS_B02"	"01. All"	"03. Panic attacks"	9
+"SK"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	28
+"SK"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	46
+"SK"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	22
+"SK"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	9
+"SK"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	19
+"SK"	"DVS_B02"	"01. All"	"09. Other"	6
+"UK"	"DVS_B02"	"01. All"	"01. Depression"	34
+"UK"	"DVS_B02"	"01. All"	"02. Anxiety"	29
+"UK"	"DVS_B02"	"01. All"	"03. Panic attacks"	14
+"UK"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	55
+"UK"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	40
+"UK"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	30
+"UK"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	15
+"UK"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	30
+"UK"	"DVS_B02"	"01. All"	"09. Other"	1
+"Survey average"	"DVS_B02"	"01. All"	"01. Depression"	24
+"Survey average"	"DVS_B02"	"01. All"	"02. Anxiety"	35
+"Survey average"	"DVS_B02"	"01. All"	"03. Panic attacks"	14
+"Survey average"	"DVS_B02"	"01. All"	"04. Loss of self-confidence"	36
+"Survey average"	"DVS_B02"	"01. All"	"05. Feeling vulnerable"	34
+"Survey average"	"DVS_B02"	"01. All"	"06. Difficulty in sleeping"	28
+"Survey average"	"DVS_B02"	"01. All"	"07. Concentration difficulties"	14
+"Survey average"	"DVS_B02"	"01. All"	"08. Difficulties in relationships"	29
+"Survey average"	"DVS_B02"	"01. All"	"09. Other"	3

@@ -1,0 +1,12 @@
+data/*
+.ipynb*
+
+!data/README.md
+
+ewhr/data/~*
+ewhr/pythonref/*
+
+ewhr/data/~$raw_data_20150701.xlsx
+
+*.pyc
+ewhr/*.pyc
