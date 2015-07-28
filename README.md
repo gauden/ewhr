@@ -31,6 +31,6 @@ Non-code elements of EWHR are licensed under a
 Creative Commons Attribution-ShareAlike 3.0 Unported License.
 
 You should have received a copy of these licenses along with this
-work.  If not, see [http://creativecommons.org/licenses/by-sa/3.0/](http://creativecommons.org/licenses/by-sa/3.0/>)
-and [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT).
+work.  If not, see http://creativecommons.org/licenses/by-sa/3.0/
+and http://opensource.org/licenses/MIT.
 ```
