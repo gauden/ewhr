@@ -32,14 +32,20 @@ PLOT_WIDTH = 800
 
 def clean_ms(df, field):
     # Remove rows with EU27
-    for pattern in ['^EU27',]:
+    for pattern in ['^EU27','^New Member','^EU-27','^EU15']:
         df = df[ ~df[field].str.contains(pattern)]
     return df
 
 def clean_mkd(df, field):
     # Standardise country label for MKD
-    for pattern in ['^MKD','^TFYR']:
+    for pattern in ['^MKD', '^TFYR', 'Macedonia']:
         df.loc[df[field].str.contains(pattern),field] = 'MKD ¶'
+    return df
+
+def clean_mda(df, field):
+    # Standardise country label for MKD
+    for pattern in ['Moldova']:
+        df.loc[df[field].str.contains(pattern),field] = 'Republic of Moldova'
     return df
 
 def check_mkd(df, field):
