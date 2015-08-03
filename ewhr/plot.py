@@ -62,6 +62,21 @@ class PlotRecord(object):
         self.specs['time_epoch'] = d.epoch()
         self.specs['time_human'] = d.datetime.strftime('%a, %d %b %Y %H:%M:%S %Z')
 
+        self.tpl_env = self._get_template_env()
+
+
+    def _get_template_env(self):
+        def _template_elim_none(val):
+            if val:
+                return val
+            else:
+                return'<strong>Value not found. Check.</strong>'
+
+        env = Environment(loader=ChoiceLoader([FileSystemLoader('tpl')]),
+                          finalize=_template_elim_none)
+        return env
+
+
     def make_pages(self):
         # Update the list of pages (in order to construct menu etc)
         # -- the list of pages is a pickled dict held in templates directory
@@ -71,43 +86,40 @@ class PlotRecord(object):
         except IOError:
             pages = {}
         
-        pages[self.specs['filename']] = self.specs
+        pages[self.specs['fig_no']] = self.specs
         self._pickle_dump_pages(pages)
 
-        # Construct the menu
-
-        # Construct the full page
-        def _template_elim_none(val):
-            if val:
-                return val
-            else:
-                return'<strong>Value not found. Check.</strong>'
-
-        env = Environment(loader=ChoiceLoader([FileSystemLoader('tpl')]),
-                          finalize=_template_elim_none)
-
-        menu_plot = env.get_template('menu_with_dropdown.html')
-        menu = menu_plot.render(specs=self.specs,
-                                pages=pages,
-                                title=self._get_long_title())
-
-        tpl_plot = env.get_template('plot.html')
-        plot_page = tpl_plot.render(specs=self.specs,
-                                    pages=pages,
-                                    title=self._get_long_title(),
-                                    menu=menu)
-
-        # Update the home page
-
-        # return url to localhost and github page
-        fn = 'fig_{}.html'.format(self.specs['fig_no'])
-        pathname = os.path.join(self.STATIC, fn)
-        self._save_page(pathname, plot_page)
+        self._rebuild_all_pages(pages)
         return True
 
-    def _get_long_title(self):
-        title = '{}: {}'.format(self.specs['fig_no'], 
-                                self.specs['title'])
+    def _rebuild_all_pages(self, pages):
+        for fig_no, specs in pages.iteritems():
+            title=self._get_long_title(specs)
+            # Construct the menu
+            menu_plot = self.tpl_env.get_template('menu_with_dropdown.html')
+            menu = menu_plot.render(specs=specs,
+                                    pages=pages,
+                                    keys=sorted(pages.keys()),
+                                    title=title,
+                                    current_fig=fig_no)
+            # Construct the full page
+            tpl_plot = self.tpl_env.get_template('plot.html')
+            plot_page = tpl_plot.render(specs=specs,
+                                        pages=pages,
+                                        title=title,
+                                        menu=menu)
+
+            # Update the home page
+
+            # Construct url 
+            fn = 'fig_{}.html'.format(fig_no)
+            pathname = os.path.join(self.STATIC, fn)
+            self._save_page(pathname, plot_page)
+
+
+    def _get_long_title(self, specs):
+        title = '{}: {}'.format(specs['fig_no'], 
+                                specs['title'])
         return title
 
 

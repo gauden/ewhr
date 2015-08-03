@@ -14,10 +14,15 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Currently viewing: {{ title|truncate(50, True) }} <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Figures <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                {% for key in pages.keys() %}
-                  <li><a href="./fig_{{ pages[key]['fig_no'] }}.html">{{ title }}</a></li>
+                {% for key in keys %}
+                  {% if current_fig == key %}
+                    <li class="active"><a href="./fig_{{ key }}.html">{{ key }} {{ pages[key].title }}</a></li>
+                  {% else %}
+                    <li><a href="./fig_{{ key }}.html">{{ key }} {{ pages[key].title }}</a></li>
+                  {% endif %}
+
                 {% endfor %}
               </ul>
             </li>
