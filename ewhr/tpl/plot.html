@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+      {{  menu }}
+
+        <div id="page-content-wrapper" class="container-fluid">
+        <!-- Page Content -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1>Fig {{ specs.fig_no }}. {{ specs.title }}</h1>
+            <h2>{{ specs.subtitle }}</h2>
+            
+              <iframe
+              width="{{ specs.plot_width }}"
+              height="{{ specs.plot_height }}"
+              frameborder="0"
+              seamless="seamless"
+              scrolling="no"
+              src="{{ specs.url_embed }}?width={{ specs.plot_width }}&height={{ specs.plot_height }}"
+              ></iframe>
+          </div>
+        </div>  <!-- jumbotron -->
+
+            <div class="row">
+              <div class="col-lg-12">
+
+              <h2>Editorial Notes</h2>
+              <table class="table table-condensed">
+                <tr>
+                  <td>Footnotes</td>
+                  <td>{{ specs.footnotes }}</td>
+                </tr>
+                <tr>
+                  <td>Caption</td>
+                  <td>{{ specs.caption }}</td>
+                  </tr>
+                  <tr>
+                    <td>Source</td>
+                    <td>{{ specs.source_label }}</td>
+                  </tr>
+                  <tr>
+                    <td>Link to source</td>
+                    <td>{{ specs.source_link }}</td>
+                  </tr>
+                  <tr>
+                    <td>Date accessed</td>
+                    <td>{{ specs.source_accessed }}</td>
+                  </tr>
+                </table>
+              <h2>Technical</h2>
+              <table class="table table-condensed">
+                <tr>
+                  <td>Embed URL</td>
+                  <td><a href="{{ specs.url_embed }}" target="_blank">{{ specs.url_embed }}</a> (Opens in new window. Also see <a href="http://help.plot.ly/embed-graphs-in-websites/">technical  notes on embedding in iframe</a>.)</td>
+                </tr>
+                <tr>
+                  <td>SVG URL</td>
+                  <td><a href="{{ specs.url_svg }}" target="_blank">{{ specs.url_svg }}</a> (Opens in new window.)</td>
+                  </tr>
+                <tr>
+                  <td>Last updated</td>
+                  <td>{{ specs.time_human }}</td>
+                  </tr>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        <!-- /#page-content-wrapper -->
+{% endblock %}
+

@@ -27,7 +27,7 @@ BREW_DIV_5 = '#1a9641'
 GREY_GRIDLINE = '#bbbbbb'
 
 PLOT_HEIGHT = 1000
-PLOT_WIDTH = 800
+PLOT_WIDTH = 780
 
 
 def clean_ms(df, field):
