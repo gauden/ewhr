@@ -18,7 +18,6 @@ Notebooks related to data visualization for the 2015 Women's Health Report from 
 ### Website:
 
 - [Bootstrap](http://getbootstrap.com/)
-- Subtle Patterns: [Black Twill](http://subtlepatterns.com/black-twill/)
 
 ## Copyright
 
