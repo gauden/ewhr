@@ -97,8 +97,7 @@ class PlotRecord(object):
             title=self._get_long_title(specs)
             # Construct the menu
             menu_plot = self.tpl_env.get_template('menu_with_dropdown.html')
-            menu = menu_plot.render(specs=specs,
-                                    pages=pages,
+            menu = menu_plot.render(pages=pages,
                                     keys=sorted(pages.keys()),
                                     title=title,
                                     current_fig=fig_no)
@@ -109,13 +108,31 @@ class PlotRecord(object):
                                         title=title,
                                         menu=menu)
 
-            # Update the home page
-
             # Construct url 
             fn = 'fig_{}.html'.format(fig_no)
             pathname = os.path.join(self.STATIC, fn)
             self._save_page(pathname, plot_page)
 
+            # Update the home page
+            self._build_home(pages)
+
+    def _build_home(self, pages):
+        title = 'EWHR Graphics'
+        keys = sorted(pages.keys())
+        # Construct the home menu
+        menu_plot = self.tpl_env.get_template('menu_with_dropdown.html')
+        menu = menu_plot.render(pages=pages,
+                                keys=keys,
+                                title=title,
+                                current_fig='00')
+        # Construct the Home Page
+        home_tpl = self.tpl_env.get_template('home.html')
+        home = home_tpl.render(pages=pages,
+                               keys=keys,
+                               title=title,
+                               menu=menu)
+        pathname = os.path.join(self.STATIC, 'index.html')
+        self._save_page(pathname, home)
 
     def _get_long_title(self, specs):
         title = '{}: {}'.format(specs['fig_no'], 
