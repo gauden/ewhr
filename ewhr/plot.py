@@ -7,10 +7,91 @@ from pprint import pprint, pformat
 import cPickle as pickle
 
 import requests
+import pandas as pd
 from pandas import DataFrame
 from jinja2 import Environment, ChoiceLoader, FileSystemLoader
 
 import delorean
+
+
+SETTINGS = dict(raw_file = os.path.join('.', 'data', 'list_of_tables_for_summary.xlsx'),
+                sheet = 'Sheet1',
+                parse_cols = 'A:L',
+                skiprows = 0,
+                skip_footer = 4
+                )
+
+
+class FigureProperties(object):
+    """Interface to access the properties for a given plot.
+
+    Params:
+    fid: str/int figure id equal to one of the fig_id entries in database
+    settings: dict params for pandas read_excel print_function
+
+    On inititalisation, a dataframe `_data` is created by reading an Excel
+    worksheet in the pathname defined by `rawfile`. If the `fid` parameter
+    points to a valid figure id, then the data for that figure is extracted
+    and retained in the instance variable `rec` -- used then as the basis for
+    extracting the value of specific properties. Valid property names are:
+
+        u'fig_id', u'fig_no', u'fig_no_orig', u'title', u'subtitle',
+        u'y_label', u'x_label', u'ref_no',
+        u'source_label', u'source_link', u'source_accessed',
+        u'draft_title', u'draft_page_no', u'note'
+
+    Usage:
+
+        rec = FigureProperties(2)
+        print(rec.subtitle)  # -> 'Subtitle of Fig 2'
+        print(rec.no_such_field)  # -> KeyError
+        
+    """
+
+    def __init__(self, fid, settings=SETTINGS):
+        self._settings = settings
+        self._data = self._read_excel()  # dataframe of ALL plots
+        self.rec = self._focus_on(fid)
+
+    def __getattr__(self, attr):
+        try:
+            return self.rec[attr].iloc[0]
+        except:
+            error = 'Plot has no attribute called {}. Try one of these instead: {}'
+            error = error.format(attr, ', '.join(self.rec.columns))
+            raise KeyError(error)
+        
+    def _focus_on(self, fid):
+        # Ensure fid is can be converted to integer
+        try:
+            fid = int(fid)
+        except:
+            error = 'Invalid figure ID: {} (must be integer)'
+            raise KeyError(error.format(fid))
+        
+        rec = self._data.ix[self._data.fig_id == fid]
+        if rec.empty:
+            error = 'Invalid figure ID: {} (not found in database)'
+            raise KeyError(error.format(fid))
+        else:
+            return rec
+
+    def _read_excel(self):
+        try:
+            DF = pd.read_excel(self._settings['raw_file'],
+                               sheetname=self._settings['sheet'],
+                               parse_cols=self._settings['parse_cols'],
+                               skiprows=self._settings['skiprows'],
+                               skip_footer=self._settings['skip_footer'])
+            DF['fig_no_orig'] = DF.draft_title.str.extract('Figure\s+(\d+\w*)')
+            DF['title'] = DF.draft_title.str.extract('Figure\s+\d+\w*\.\s*(.+)')
+            DF = DF[[u'fig_id', u'fig_no', u'fig_no_orig', u'title', u'subtitle',
+                     u'y_label', u'x_label', u'ref_no',
+                     u'source_label', u'source_link', u'source_accessed',
+                     u'draft_title', u'draft_page_no', u'note']]
+            return DF
+        except IOError:
+            raise IOError('Could not open the Excel sheet from data directory.')
 
 class PlotRecord(object):
 
@@ -190,3 +271,9 @@ class PlotRecord(object):
             output += row.format(key, val)
         return output
 
+
+if __name__ == '__main__':
+    rec = FigureProperties(2)
+    print(rec.title)
+    print(rec.subtitle)
+    print(rec.millipede)
