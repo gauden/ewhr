@@ -16,7 +16,7 @@ import delorean
 
 SETTINGS = dict(raw_file = os.path.join('.', 'data', 'list_of_tables_for_summary.xlsx'),
                 sheet = 'Sheet1',
-                parse_cols = 'A:L',
+                parse_cols = 'A:S',
                 skiprows = 0,
                 skip_footer = 4
                 )
@@ -35,10 +35,12 @@ class FigureProperties(object):
     and retained in the instance variable `rec` -- used then as the basis for
     extracting the value of specific properties. Valid property names are:
 
-        u'fig_id', u'fig_no', u'fig_no_orig', u'title', u'subtitle',
-        u'y_label', u'x_label', u'ref_no',
-        u'source_label', u'source_link', u'source_accessed',
-        u'draft_title', u'draft_page_no', u'note'
+                       u'file_id',          u'fig_no',           u'title',
+                      u'subtitle',   u'draft_page_no',       u'footnotes',       u'caption',
+                           u'mkd',       u'hovermode',         u'y_label',
+                       u'x_label',      u'plot_width',     u'plot_height',
+                        u'ref_no',    u'source_label',     u'source_link',
+               u'source_accessed', u'isabel_comments', u'vivian_comments'
 
     Usage:
 
@@ -48,10 +50,10 @@ class FigureProperties(object):
         
     """
 
-    def __init__(self, fid, settings=SETTINGS):
+    def __init__(self, notebook, settings=SETTINGS):
         self._settings = settings
         self._data = self._read_excel()  # dataframe of ALL plots
-        self.rec = self._focus_on(fid)
+        self.rec = self._focus_on(notebook)
 
     def __getattr__(self, attr):
         try:
@@ -60,19 +62,27 @@ class FigureProperties(object):
             error = 'Plot has no attribute called {}. Try one of these instead: {}'
             error = error.format(attr, ', '.join(self.rec.columns))
             raise KeyError(error)
-        
-    def _focus_on(self, fid):
-        # Ensure fid is can be converted to integer
+
+    def __getitem__(self, attr):
         try:
-            fid = int(fid)
+            return self.rec[attr].iloc[0]
         except:
-            error = 'Invalid figure ID: {} (must be integer)'
-            raise KeyError(error.format(fid))
+            error = 'Plot has no attribute called {}. Try one of these instead: {}'
+            error = error.format(attr, ', '.join(self.rec.columns))
+            raise KeyError(error)
         
-        rec = self._data.ix[self._data.fig_id == fid]
+    def _focus_on(self, notebook):
+        # Ensure notebook is can be converted to integer
+        try:
+            notebook = int(notebook)
+        except:
+            error = 'Invalid notebook id: {} (must be integer)'
+            raise KeyError(error.format(notebook))
+        
+        rec = self._data.ix[self._data.notebook == notebook]
         if rec.empty:
-            error = 'Invalid figure ID: {} (not found in database)'
-            raise KeyError(error.format(fid))
+            error = 'Invalid notebook id: {} (not found in database)'
+            raise KeyError(error.format(notebook))
         else:
             return rec
 
@@ -82,16 +92,13 @@ class FigureProperties(object):
                                sheetname=self._settings['sheet'],
                                parse_cols=self._settings['parse_cols'],
                                skiprows=self._settings['skiprows'],
-                               skip_footer=self._settings['skip_footer'])
-            DF['fig_no_orig'] = DF.draft_title.str.extract('Figure\s+(\d+\w*)')
-            DF['title'] = DF.draft_title.str.extract('Figure\s+\d+\w*\.\s*(.+)')
-            DF = DF[[u'fig_id', u'fig_no', u'fig_no_orig', u'title', u'subtitle',
-                     u'y_label', u'x_label', u'ref_no',
-                     u'source_label', u'source_link', u'source_accessed',
-                     u'draft_title', u'draft_page_no', u'note']]
+                               skip_footer=self._settings['skip_footer']
+                               )
+            DF = DF.fillna('')
             return DF
         except IOError:
             raise IOError('Could not open the Excel sheet from data directory.')
+
 
 class PlotRecord(object):
 
@@ -100,26 +107,23 @@ class PlotRecord(object):
     STATIC = os.path.join('..')
 
     def __init__(self, var_list):
+        
         self.specs = {}
 
-        # retrieve the values of the basic set of keys
-        keys = ['title', 'subtitle',
-                'X_LABEL', 'Y_LABEL', 'fig',
-                'DF', 'filename',
-                'plot_height', 'plot_width',
-                'footnotes', 'caption']
+        keys = ['fig', 'DF', 'filename']
         for key in keys:
-            val = var_list.get(key, None)
+            self.specs[key] = var_list.get(key, None)
+
+        # retrieve the values of the basic set of keys
+        props = var_list['props']
+        keys = ['fig_no', 'title', 'subtitle', 'x_label', 'y_label',
+                'plot_height', 'plot_width', 'footnotes', 'caption',
+                'source_label', 'source_link', 'source_accessed']
+        for key in keys:
+            val = props[key]
             if isinstance(val, unicode) and val in ['NNN', '']:
                 val = None
             self.specs[key] = val
-
-        # retrieve and flatten the values of the source dict
-        for key, val in var_list['source'].iteritems():
-            new_key = 'source_{}'.format(key)
-            if val in ['NNN', '']:
-                val = None
-            self.specs[new_key] = val
 
         # retrieve the plotly record for the graph and the thumbnail
         self.specs['record'] = self._get_fig_record(var_list['filename'])
@@ -128,15 +132,12 @@ class PlotRecord(object):
         self.specs['thumb'] = src
 
         # construct the url to the SVG file and get embed url
-        fid = self.specs['record']['fid'].split(':')[1]
-        url_svg = 'https://plot.ly/~gauden/{}.svg'.format(fid)
+        plotly_id = self.specs['record']['fid'].split(':')[1]
+        url_svg = 'https://plot.ly/~gauden/{}.svg'.format(plotly_id)
         self.specs['url_svg'] = url_svg
 
         url_embed = self.specs['record']['embed_url']
         self.specs['url_embed'] = url_embed
-
-        # construct the figure number from filename ('vaw/fig_18' -> 'fig_18')
-        self.specs['fig_no'] = self.specs['filename'][8:]
 
         # Get timestamp for current update (UTC time)
         d = delorean.Delorean()
@@ -151,7 +152,7 @@ class PlotRecord(object):
             if val:
                 return val
             else:
-                return'<strong>Value not found. Check.</strong>'
+                return'<strong>Value not found. Please double-check (a blank value may be valid).</strong>'
 
         env = Environment(loader=ChoiceLoader([FileSystemLoader('tpl')]),
                           finalize=_template_elim_none)
@@ -178,7 +179,8 @@ class PlotRecord(object):
             title=self._get_long_title(specs)
             # Construct the menu
             menu_plot = self.tpl_env.get_template('menu_with_dropdown.html')
-            menu = menu_plot.render(pages=pages,
+            menu = menu_plot.render(specs=specs,
+                                    pages=pages,
                                     keys=sorted(pages.keys()),
                                     title=title,
                                     current_fig=fig_no)
