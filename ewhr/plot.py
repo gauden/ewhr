@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import (absolute_import, print_function,
                         division, unicode_literals)
 
@@ -118,12 +119,22 @@ class PlotRecord(object):
         props = var_list['props']
         keys = ['fig_no', 'title', 'subtitle', 'x_label', 'y_label',
                 'plot_height', 'plot_width', 'footnotes', 'caption',
-                'source_label', 'source_link', 'source_accessed']
+                'source_label', 'source_link', 'source_accessed', 'ref_no']
         for key in keys:
             val = props[key]
             if isinstance(val, unicode) and val in ['NNN', '']:
                 val = None
             self.specs[key] = val
+
+        # Check for MKD in the DataFrame and adjust the footnotes accordingly
+        mkd_note = self._check_mkd_footnote()
+        if mkd_note:
+            if self.specs['footnotes']:
+                self.specs['footnotes'] += '\n' + mkd_note
+            else:
+                self.specs['footnotes'] = mkd_note
+        if self.specs['footnotes']:
+            self.specs['footnotes'] = '\n<br>'.join(self.specs['footnotes'].split('\n'))
 
         # retrieve the plotly record for the graph and the thumbnail
         self.specs['record'] = self._get_fig_record(var_list['filename'])
@@ -145,6 +156,19 @@ class PlotRecord(object):
         self.specs['time_human'] = d.datetime.strftime('%a, %d %b %Y %H:%M:%S %Z')
 
         self.tpl_env = self._get_template_env()
+
+
+    def _check_mkd_footnote(self):
+        mkd_note = '¶ The former Yugoslav Republic of Macedonia ' + \
+                   '(MKD is an abbreviation of the ISO).'
+        fields = self.specs['DF'].columns
+        for field in fields:
+            try:
+                if self.specs['DF'][field].str.contains('MKD ¶').any():
+                    return mkd_note
+            except AttributeError:
+                pass
+        return ''
 
 
     def _get_template_env(self):
@@ -224,16 +248,17 @@ class PlotRecord(object):
 
 
     def _save_page(self, path, page):
-        with open(path, 'wb') as fh:
+        page = page.encode('utf-8')
+        with open(path, 'w') as fh:
             fh.write(page)
 
     def _pickle_load_pages(self):
-        with open(self.PAGES, 'rb') as pkl_handle:
+        with open(self.PAGES, 'r') as pkl_handle:
             pgs = pickle.load(pkl_handle)
         return pgs
 
     def _pickle_dump_pages(self, pages):
-        with open(self.PAGES, 'wb') as pkl_handle:
+        with open(self.PAGES, 'w') as pkl_handle:
             pickle.dump(pages, pkl_handle)
 
     def _get_fig_record(self, path):
@@ -270,6 +295,9 @@ class PlotRecord(object):
             val = self.specs.get(key, error)
             if not isinstance(val, unicode):
                 val = type(val)
+            if key == 'footnotes':
+                # TDOD skip footnotes as for some reason causing UnicodeDecodeError
+                continue
             output += row.format(key, val)
         return output
 
