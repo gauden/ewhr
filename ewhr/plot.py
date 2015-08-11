@@ -196,7 +196,20 @@ class PlotRecord(object):
         self._pickle_dump_pages(pages)
 
         self._rebuild_all_pages(pages)
+        self._save_dataset()
         return True
+
+    def _save_dataset(self):
+        data = self.specs['DF']
+        fig_no = self.specs['fig_no']
+        datasets_dir = os.path.join('data', 'datasets')
+
+        xlsx_path = os.path.join(datasets_dir, 'dataset_{}.xlsx'.format(fig_no))
+        data.to_excel(excel_writer=xlsx_path, 
+                      sheet_name='fig_{}'.format(self.specs['fig_no']))
+
+        csv_path = os.path.join(datasets_dir, 'dataset_{}.csv'.format(fig_no))
+        data.to_csv(csv_path, encoding='utf-8')
 
     def _rebuild_all_pages(self, pages):
         for fig_no, specs in pages.iteritems():
