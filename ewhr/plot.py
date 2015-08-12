@@ -159,8 +159,7 @@ class PlotRecord(object):
 
 
     def _check_mkd_footnote(self):
-        mkd_note = '¶ The former Yugoslav Republic of Macedonia ' + \
-                   '(MKD is an abbreviation of the ISO).'
+        mkd_note = '¶ The former Yugoslav Republic of Macedonia (MKD) is an abbreviation of the International Organization for Standardization (ISO).'
         fields = self.specs['DF'].columns
         for field in fields:
             try:

@@ -49,8 +49,7 @@ def clean_mda(df, field):
     return df
 
 def check_mkd(df, field):
-    footnote = '¶ The former Yugoslav Republic of Macedonia ' + \
-               '(MKD is an abbreviation of the ISO).'
+    footnote = '¶ The former Yugoslav Republic of Macedonia (MKD) is an abbreviation of the International Organization for Standardization (ISO).'
     if df[field].str.contains('MKD ¶').any():
         return footnote
     else:

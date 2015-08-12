@@ -29,7 +29,10 @@
               <table class="table table-condensed">
                 <tr>
                   <td>Footnotes</td>
-                  <td>{{ specs.footnotes }}</td>
+                  <td>
+                    {{ specs.footnotes }}
+                    <p><em>Source</em>: {{ specs.source_label }} (<em>{{ specs.ref_no }}</em>)</p>
+                  </td>
                 </tr>
                 <tr>
                   <td>Caption</td>
